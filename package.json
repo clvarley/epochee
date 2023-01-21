@@ -1,0 +1,26 @@
+{
+  "name": "date-work",
+  "version": "1.0.0",
+  "description": "Sane datetime manipulation.",
+  "homepage": "https://github.com/clvarley/date-work",
+  "keywords": [
+    "date",
+    "time",
+    "datetime",
+    "calculation",
+    "manipulation",
+    "add",
+    "subtract"
+  ],
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "clvarley",
+  "license": "MIT",
+  "devDependencies": {
+    "date-write": "^1.0.0",
+    "typescript": "^4.9.4"
+  }
+}
