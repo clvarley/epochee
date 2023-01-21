@@ -1,4 +1,6 @@
-export type DateTimeProps = {
+import { getMethods, cloneWith } from "./utils";
+
+export type DateTimeUpdate = {
     days?: number
     months?: number,
     years?: number,
@@ -12,23 +14,6 @@ export type DatioPlugin = {
     install: (datio: typeof Datio.prototype) => void
 };
 
-type MethodPair<T> = [keyof T, Function];
-type MethodMap<T> = Array<MethodPair<T>>;
-
-/**
- * @internal
- */
-const cloneWith = (subject: Date, changes: DateTimeProps): Date => {
-    return new Date(
-        subject.getFullYear() + (changes.years || 0),
-        subject.getMonth() + (changes.months || 0),
-        subject.getDate() + (changes.days || 0),
-        subject.getHours() + (changes.hours || 0),
-        subject.getMinutes() + (changes.minutes || 0),
-        subject.getSeconds() + (changes.seconds || 0)
-    );
-};
-
 /**
  * @internal
  */
@@ -36,17 +21,6 @@ const pluginError = (plugin: string, method: string): Error => {
     return new Error(
         `Datio plugin (${plugin}) cannot override core method '${method}'!`
     );
-};
-
-/**
- * @internal
- */
-const getMethods = <T>(subject: T): MethodMap<T> => {
-    return (Object.getOwnPropertyNames(subject) as (keyof T)[]).filter((property) => {
-        return (subject[property] instanceof Function);
-    }).map((property): MethodPair<T> => {
-        return [property, subject[property] as Function];
-    });
 };
 
 /**
@@ -74,7 +48,7 @@ export class Datio {
         });
     };
 
-    private change(changes: DateTimeProps): Datio {
+    private change(changes: DateTimeUpdate): Datio {
         return new Datio(cloneWith(this.date, changes));
     };
 
