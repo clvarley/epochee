@@ -27,7 +27,8 @@ const pluginError = (plugin: string, method: string): Error => {
  * Sane date manipulation.
  *
  * Datio provides a simple (and immutable) way to work with dates and times in
- * JavaScript.
+ * JavaScript. To begin, create a new instance of this class or call the `datio`
+ * utility method.
  */
 export class Datio {
     readonly date: Date;
@@ -137,6 +138,12 @@ export class Datio {
     toUTCString(): string {
         return this.date.toUTCString();
     }
-}
+};
 
+/**
+ * Create and return a new immutable datio instance
+ *
+ * @param date Input date
+ * @return     Datio instance (immutable)
+ */
 export const datio = (date?: Date): Datio => new Datio(date);
