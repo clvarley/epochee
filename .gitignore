@@ -5,3 +5,6 @@
 # Compiled output
 /dist
 /types
+
+# Tests
+/test/**/*.js
