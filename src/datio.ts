@@ -34,7 +34,8 @@ export class Datio {
     readonly date: Date;
 
     constructor(date?: Date) {
-        this.date = date || new Date();
+        // Clone the passed date so there are no external refs to it
+        this.date = date ? new Date(date.valueOf()) : new Date();
     };
 
     static extend(plugin: DatioPlugin): void {
