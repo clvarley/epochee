@@ -125,13 +125,13 @@ describe("Utility functions", function () {
             });
         });
 
-        it("doesn't traverse prototype", function () {
+        it("returns only own properties", function () {
             const methods = getMethods(exampleObject);
             const methodNames = methods.map(([name]) => name);
 
             // Only expect own properties, not those in prototype chain
             assert.strictEqual(2, methods.length);
-            assert.hasAllKeys(methodNames, ["getName", "someMethod"]);
+            assert.deepEqual(methodNames, ["getName", "someMethod"]);
         });
     });
 });
