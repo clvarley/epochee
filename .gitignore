@@ -8,3 +8,4 @@
 
 # Tests
 /test/**/*.js
+/src/**/*.js
