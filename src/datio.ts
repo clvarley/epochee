@@ -49,44 +49,44 @@ export class Datio {
         });
     };
 
-    private change(changes: DateTimeUpdate): Datio {
+    // ---- Manipulation ----
+
+    add(changes: DateTimeUpdate): Datio {
         return new Datio(cloneWith(this.date, changes));
     };
 
-    // ---- Manipulation ----
-
     addYears(years: number): Datio {
-        return this.change({
+        return this.add({
             years: years
         });
     };
 
     addMonths(months: number): Datio {
-        return this.change({
+        return this.add({
             months: months
         });
     };
 
     addDays(days: number): Datio {
-        return this.change({
+        return this.add({
             days: days
         });
     };
 
     addHours(hours: number): Datio {
-        return this.change({
+        return this.add({
             hours: hours
         });
     };
 
     addMinutes(minutes: number): Datio {
-        return this.change({
+        return this.add({
             minutes: minutes
         });
     };
 
     addSeconds(seconds: number): Datio {
-        return this.change({
+        return this.add({
             seconds: seconds
         });
     };
@@ -120,11 +120,11 @@ export class Datio {
     // ---- Utilities ----
 
     clone(): Datio {
-        return this.change({});
+        return this.add({});
     };
 
     toDate(): Date {
-        return this.change({}).date;
+        return this.add({}).date;
     };
 
     toString(): string {
