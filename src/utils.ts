@@ -3,14 +3,28 @@ import type { DateTimeUpdate } from "./datio";
 /**
  * @internal
  */
-export const cloneWith = (subject: Date, changes: DateTimeUpdate): Date => {
+export const normalise = (changes: DateTimeUpdate): Required<DateTimeUpdate> => {
+    return Object.assign({
+        years: 0,
+        months: 0,
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0
+    }, changes);
+};
+
+/**
+ * @internal
+ */
+export const cloneWith = (subject: Date, changes: Required<DateTimeUpdate>): Date => {
     return new Date(
-        subject.getFullYear() + (changes.years || 0),
-        subject.getMonth() + (changes.months || 0),
-        subject.getDate() + (changes.days || 0),
-        subject.getHours() + (changes.hours || 0),
-        subject.getMinutes() + (changes.minutes || 0),
-        subject.getSeconds() + (changes.seconds || 0)
+        subject.getFullYear() + changes.years,
+        subject.getMonth() + changes.months,
+        subject.getDate() + changes.days,
+        subject.getHours() + changes.hours,
+        subject.getMinutes() + changes.minutes,
+        subject.getSeconds() + changes.seconds
     );
 };
 

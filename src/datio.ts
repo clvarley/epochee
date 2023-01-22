@@ -1,4 +1,4 @@
-import { getMethods, cloneWith } from "./utils";
+import { getMethods, cloneWith, normalise } from "./utils";
 
 export type DateTimeUpdate = {
     days?: number
@@ -52,7 +52,7 @@ export class Datio {
     // ---- Manipulation ----
 
     add(changes: DateTimeUpdate): Datio {
-        return new Datio(cloneWith(this.date, changes));
+        return new Datio(cloneWith(this.date, normalise(changes)));
     };
 
     addYears(years: number): Datio {
