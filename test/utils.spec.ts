@@ -124,5 +124,14 @@ describe("Utility functions", function () {
                 assert.isFunction(value);
             });
         });
+
+        it("doesn't traverse prototype", function () {
+            const methods = getMethods(exampleObject);
+            const methodNames = methods.map(([name]) => name);
+
+            // Only expect own properties, not those in prototype chain
+            assert.strictEqual(2, methods.length);
+            assert.hasAllKeys(methodNames, ["getName", "someMethod"]);
+        });
     });
 });
