@@ -4,14 +4,15 @@ import type { DateTimeUpdate } from "./datio";
  * @internal
  */
 export const normalise = (changes: DateTimeUpdate): Required<DateTimeUpdate> => {
-    return Object.assign({
-        years: 0,
-        months: 0,
-        days: 0,
-        hours: 0,
-        minutes: 0,
-        seconds: 0
-    }, changes);
+    /** NOTE: Swap to using Object.assign when we reach ES6 minimum target */
+    return {
+        years: (changes.years !== undefined ? changes.years : 0),
+        months: (changes.months !== undefined ? changes.months : 0),
+        days: (changes.days !== undefined ? changes.days : 0),
+        hours: (changes.hours !== undefined ? changes.hours : 0),
+        minutes: (changes.minutes !== undefined ? changes.minutes : 0),
+        seconds: (changes.seconds !== undefined ? changes.seconds : 0)
+    }
 };
 
 /**
