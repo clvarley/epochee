@@ -9,6 +9,6 @@
   "files": [
     "test/utils.spec.ts",
     "test/plugins/format.spec.ts",
-    "test/plugins/getters.spec.ts"
+    "test/plugins/start-of.spec.ts"
   ]
 }

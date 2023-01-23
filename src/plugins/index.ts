@@ -2,6 +2,10 @@ export {
     format
 } from "./format";
 
+// export {
+//     getters
+// } from "./getters";
+
 export {
-    getters
-} from "./getters";
+    startOf
+} from "./start-of";
