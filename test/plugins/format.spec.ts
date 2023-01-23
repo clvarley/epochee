@@ -1,6 +1,6 @@
 import { assert } from "chai";
 import { Epochee } from "../../src/epochee";
-import { format } from "../../src/plugins/format";
+import { format } from "../../src/plugins";
 
 describe("Plugin (core-format)", function () {
     it("registers method on prototype", function () {
@@ -12,7 +12,7 @@ describe("Plugin (core-format)", function () {
         assert.isFunction(Epochee.prototype.format);
     });
 
-    it("can format date", function () {
+    it("can call epochee.format(...)", function () {
         const y2k = new Epochee(new Date(2000, 0, 1, 0, 0, 0));
         const output = y2k.format("Y-M-D");
 
