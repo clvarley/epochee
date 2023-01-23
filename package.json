@@ -18,7 +18,8 @@
     "pretest": "tsc -p tsconfig.spec.json",
     "test": "mocha --recursive",
     "posttest": "rm $(find ./src ./test -name \\*.js)",
-    "build": "tsc"
+    "tidy": "rm -R ./types && rm -R ./dist",
+    "build": "npm run tidy && tsc"
   },
   "author": "clvarley",
   "license": "MIT",
