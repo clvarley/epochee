@@ -25,55 +25,55 @@ describe("Plugin (core-start-of)", function () {
     it("can call epochee.startOfYear(...)", function () {
         const instance = (new Epochee(exampleDate)).startOfYear();
 
-        assert.strictEqual(instance.date.getFullYear(), 1952);
-        assert.strictEqual(instance.date.getMonth(), 0);
-        assert.strictEqual(instance.date.getDate(), 1);
-        assert.strictEqual(instance.date.getHours(), 0);
-        assert.strictEqual(instance.date.getMinutes(), 0);
-        assert.strictEqual(instance.date.getSeconds(), 0);
+        assert.strictEqual(instance.date.getFullYear(), 1952, "Incorrect year");
+        assert.strictEqual(instance.date.getMonth(), 0,       "Incorrect month");
+        assert.strictEqual(instance.date.getDate(), 1,        "Incorrect day");
+        assert.strictEqual(instance.date.getHours(), 0,       "Incorrect hour");
+        assert.strictEqual(instance.date.getMinutes(), 0,     "Incorrect minute");
+        assert.strictEqual(instance.date.getSeconds(), 0,     "Incorrect second");
     });
 
     it("can call epochee.startOfMonth(...)", function () {
         const instance = (new Epochee(exampleDate)).startOfMonth();
 
-        assert.strictEqual(instance.date.getFullYear(), 1952);
-        assert.strictEqual(instance.date.getMonth(), 2);
-        assert.strictEqual(instance.date.getDate(), 1);
-        assert.strictEqual(instance.date.getHours(), 0);
-        assert.strictEqual(instance.date.getMinutes(), 0);
-        assert.strictEqual(instance.date.getSeconds(), 0);
+        assert.strictEqual(instance.date.getFullYear(), 1952, "Incorrect year");
+        assert.strictEqual(instance.date.getMonth(), 2,       "Incorrect month");
+        assert.strictEqual(instance.date.getDate(), 1,        "Incorrect day");
+        assert.strictEqual(instance.date.getHours(), 0,       "Incorrect hour");
+        assert.strictEqual(instance.date.getMinutes(), 0,     "Incorrect minute");
+        assert.strictEqual(instance.date.getSeconds(), 0,     "Incorrect second");
     });
 
     it("can call epochee.startOfDay(...)", function () {
         const instance = (new Epochee(exampleDate)).startOfMonth();
 
-        assert.strictEqual(instance.date.getFullYear(), 1952);
-        assert.strictEqual(instance.date.getMonth(), 2);
-        assert.strictEqual(instance.date.getDate(), 11);
-        assert.strictEqual(instance.date.getHours(), 0);
-        assert.strictEqual(instance.date.getMinutes(), 0);
-        assert.strictEqual(instance.date.getSeconds(), 0);
+        assert.strictEqual(instance.date.getFullYear(), 1952, "Incorrect year");
+        assert.strictEqual(instance.date.getMonth(), 2,       "Incorrect month");
+        assert.strictEqual(instance.date.getDate(), 11,       "Incorrect day");
+        assert.strictEqual(instance.date.getHours(), 0,       "Incorrect hour");
+        assert.strictEqual(instance.date.getMinutes(), 0,     "Incorrect minute");
+        assert.strictEqual(instance.date.getSeconds(), 0,     "Incorrect second");
     });
 
     it("can call epochee.startOfHour(...)", function () {
         const instance = (new Epochee(exampleDate)).startOfMonth();
 
-        assert.strictEqual(instance.date.getFullYear(), 1952);
-        assert.strictEqual(instance.date.getMonth(), 2);
-        assert.strictEqual(instance.date.getDate(), 11);
-        assert.strictEqual(instance.date.getHours(), 12);
-        assert.strictEqual(instance.date.getMinutes(), 0);
-        assert.strictEqual(instance.date.getSeconds(), 0);
+        assert.strictEqual(instance.date.getFullYear(), 1952, "Incorrect year");
+        assert.strictEqual(instance.date.getMonth(), 2,       "Incorrect month");
+        assert.strictEqual(instance.date.getDate(), 11,       "Incorrect day");
+        assert.strictEqual(instance.date.getHours(), 12,      "Incorrect hour");
+        assert.strictEqual(instance.date.getMinutes(), 0,     "Incorrect minute");
+        assert.strictEqual(instance.date.getSeconds(), 0,     "Incorrect second");
     });
 
     it("can call epochee.startOfMonth(...)", function () {
         const instance = (new Epochee(exampleDate)).startOfMonth();
 
-        assert.strictEqual(instance.date.getFullYear(), 1952);
-        assert.strictEqual(instance.date.getMonth(), 2);
-        assert.strictEqual(instance.date.getDate(), 11);
-        assert.strictEqual(instance.date.getHours(), 12);
-        assert.strictEqual(instance.date.getMinutes(), 30);
-        assert.strictEqual(instance.date.getSeconds(), 0);
+        assert.strictEqual(instance.date.getFullYear(), 1952, "Incorrect year");
+        assert.strictEqual(instance.date.getMonth(), 2,       "Incorrect month");
+        assert.strictEqual(instance.date.getDate(), 11,       "Incorrect day");
+        assert.strictEqual(instance.date.getHours(), 12,      "Incorrect hour");
+        assert.strictEqual(instance.date.getMinutes(), 30,    "Incorrect minute");
+        assert.strictEqual(instance.date.getSeconds(), 0,     "Incorrect second");
     });
 });
