@@ -16,8 +16,8 @@
   "types": "types/index.d.ts",
   "scripts": {
     "pretest": "tsc -p tsconfig.spec.json",
-    "test": "mocha",
-    "posttest": "rm $(find ./{src,test}/*.js)",
+    "test": "mocha --recursive",
+    "posttest": "rm $(find ./src ./test -name \\*.js)",
     "build": "tsc"
   },
   "author": "clvarley",
