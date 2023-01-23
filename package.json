@@ -1,6 +1,6 @@
 {
-  "name": "date-work",
-  "version": "1.0.0",
+  "name": "epochee",
+  "version": "0.1.0",
   "description": "Sane datetime manipulation.",
   "homepage": "https://github.com/clvarley/date-work",
   "keywords": [

@@ -9,9 +9,9 @@ export type DateTimeUpdate = {
     hours?: number
 };
 
-export type DatioPlugin = {
+export type EpocheePlugin = {
     name: string,
-    install: (datio: typeof Datio.prototype) => void
+    install: (epochee: typeof Epochee.prototype) => void
 };
 
 /**
@@ -19,18 +19,18 @@ export type DatioPlugin = {
  */
 const pluginError = (plugin: string, method: string): Error => {
     return new Error(
-        `Datio plugin (${plugin}) cannot override core method '${method}'!`
+        `Epochee plugin (${plugin}) cannot override core method '${method}'!`
     );
 };
 
 /**
  * Sane date manipulation.
  *
- * Datio provides a simple (and immutable) way to work with dates and times in
- * JavaScript. To begin, create a new instance of this class or call the `datio`
- * utility method.
+ * Epochee provides a simple (and immutable) way to work with dates and times in
+ * JavaScript. To begin, create a new instance of this class or call the
+ * `epochee()` utility method.
  */
-export class Datio {
+export class Epochee {
     readonly date: Date;
 
     constructor(date?: Date) {
@@ -38,55 +38,55 @@ export class Datio {
         this.date = date ? new Date(date.valueOf()) : new Date();
     };
 
-    static extend(plugin: DatioPlugin): void {
-        const before = getMethods(Datio.prototype);
+    static extend(plugin: EpocheePlugin): void {
+        const before = getMethods(this.prototype);
 
-        plugin.install(Datio.prototype);
+        plugin.install(this.prototype);
 
         // Check plugin has not modified core methods
         before.forEach(([method, implementation]) => {
-            if (Datio.prototype[method] !== implementation)
+            if (this.prototype[method] !== implementation)
                 throw pluginError(plugin.name, method);
         });
     };
 
     // ---- Manipulation ----
 
-    add(changes: DateTimeUpdate): Datio {
-        return new Datio(cloneWith(this.date, normalise(changes)));
+    add(changes: DateTimeUpdate): Epochee {
+        return new Epochee(cloneWith(this.date, normalise(changes)));
     };
 
-    addYears(years: number): Datio {
+    addYears(years: number): Epochee {
         return this.add({
             years: years
         });
     };
 
-    addMonths(months: number): Datio {
+    addMonths(months: number): Epochee {
         return this.add({
             months: months
         });
     };
 
-    addDays(days: number): Datio {
+    addDays(days: number): Epochee {
         return this.add({
             days: days
         });
     };
 
-    addHours(hours: number): Datio {
+    addHours(hours: number): Epochee {
         return this.add({
             hours: hours
         });
     };
 
-    addMinutes(minutes: number): Datio {
+    addMinutes(minutes: number): Epochee {
         return this.add({
             minutes: minutes
         });
     };
 
-    addSeconds(seconds: number): Datio {
+    addSeconds(seconds: number): Epochee {
         return this.add({
             seconds: seconds
         });
@@ -120,7 +120,7 @@ export class Datio {
 
     // ---- Utilities ----
 
-    clone(): Datio {
+    clone(): Epochee {
         return this.add({});
     };
 
@@ -142,9 +142,9 @@ export class Datio {
 };
 
 /**
- * Create and return a new immutable datio instance
+ * Create and return a new immutable epochee instance
  *
  * @param date Input date
- * @return     Datio instance (immutable)
+ * @return     Epochee instance (immutable)
  */
-export const datio = (date?: Date): Datio => new Datio(date);
+export const epochee = (date?: Date): Epochee => new Epochee(date);

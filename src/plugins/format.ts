@@ -1,13 +1,13 @@
-import type { DatioPlugin } from "../datio";
+import type { EpocheePlugin } from "../epochee";
 import { dateToFormat } from "date-write";
 
-declare module "../datio" {
-    interface Datio {
-        format(this: Datio, format: string): string
+declare module "../epochee" {
+    interface Epochee {
+        format(this: Epochee, format: string): string
     }
 };
 
-export const format: DatioPlugin = {
+export const format: EpocheePlugin = {
     name: "core-format",
     install: (prototype) => {
         prototype.format = function (format: string): string {

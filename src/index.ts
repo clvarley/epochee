@@ -1,4 +1,4 @@
 export {
-    Datio,
-    datio
-} from "./datio";
+    Epochee,
+    epochee
+} from "./epochee";

@@ -1,4 +1,4 @@
-import type { DateTimeUpdate } from "./datio";
+import type { DateTimeUpdate } from "./epochee";
 
 /**
  * @internal
