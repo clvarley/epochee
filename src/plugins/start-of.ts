@@ -23,12 +23,12 @@ declare module "../epochee" {
  */
 const dateWith = (subject: Date, update: DateTimeUpdate): Date => {
     return new Date(
-        update.years   || subject.getFullYear(),
-        update.months  || subject.getMonth(),
-        update.days    || subject.getDate(),
-        update.hours   || subject.getHours(),
-        update.minutes || subject.getMinutes(),
-        update.seconds || subject.getSeconds()
+        update.years   ?? subject.getFullYear(),
+        update.months  ?? subject.getMonth(),
+        update.days    ?? subject.getDate(),
+        update.hours   ?? subject.getHours(),
+        update.minutes ?? subject.getMinutes(),
+        update.seconds ?? subject.getSeconds()
     );
 };
 
