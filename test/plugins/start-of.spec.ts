@@ -45,7 +45,7 @@ describe("Plugin (core-start-of)", function () {
     });
 
     it("can call epochee.startOfDay(...)", function () {
-        const instance = (new Epochee(exampleDate)).startOfMonth();
+        const instance = (new Epochee(exampleDate)).startOfDay();
 
         assert.strictEqual(instance.date.getFullYear(), 1952, "Incorrect year");
         assert.strictEqual(instance.date.getMonth(), 2,       "Incorrect month");
@@ -56,7 +56,7 @@ describe("Plugin (core-start-of)", function () {
     });
 
     it("can call epochee.startOfHour(...)", function () {
-        const instance = (new Epochee(exampleDate)).startOfMonth();
+        const instance = (new Epochee(exampleDate)).startOfHour();
 
         assert.strictEqual(instance.date.getFullYear(), 1952, "Incorrect year");
         assert.strictEqual(instance.date.getMonth(), 2,       "Incorrect month");
@@ -66,8 +66,8 @@ describe("Plugin (core-start-of)", function () {
         assert.strictEqual(instance.date.getSeconds(), 0,     "Incorrect second");
     });
 
-    it("can call epochee.startOfMonth(...)", function () {
-        const instance = (new Epochee(exampleDate)).startOfMonth();
+    it("can call epochee.startOfMinute(...)", function () {
+        const instance = (new Epochee(exampleDate)).startOfMinute();
 
         assert.strictEqual(instance.date.getFullYear(), 1952, "Incorrect year");
         assert.strictEqual(instance.date.getMonth(), 2,       "Incorrect month");
