@@ -24,7 +24,7 @@
   "author": "clvarley",
   "license": "MIT",
   "peerDependencies": {
-    "date-write": "1.x"
+    "date-write": ">= 1.0.1"
   },
   "devDependencies": {
     "@types/chai": "^4.3.4",
