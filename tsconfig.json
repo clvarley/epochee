@@ -9,6 +9,7 @@
     "declarationDir": "types"
   },
   "files": [
-    "src/index.ts"
+    "src/index.ts",
+    "src/plugins/index.ts"
   ]
 }
