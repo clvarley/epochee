@@ -2,7 +2,7 @@
   "name": "epochee",
   "version": "0.1.0",
   "description": "Sane datetime manipulation.",
-  "homepage": "https://github.com/clvarley/date-work",
+  "homepage": "https://github.com/clvarley/epochee#readme",
   "keywords": [
     "date",
     "time",
@@ -23,11 +23,13 @@
   },
   "author": "clvarley",
   "license": "MIT",
+  "peerDependencies": {
+    "date-write": "1.x"
+  },
   "devDependencies": {
     "@types/chai": "^4.3.4",
     "@types/mocha": "^10.0.1",
     "chai": "^4.3.7",
-    "date-write": "^1.0.0",
     "mocha": "^10.2.0",
     "typescript": "^4.9.4"
   }
