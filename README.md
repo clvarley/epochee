@@ -1,5 +1,7 @@
 # epochee
 
+THIS LIBRARY IS IN ALPHA - PLEASE DO NOT USE IN PRODUCTION!
+
 Sane date-time manipulation.
 
 ## Installation

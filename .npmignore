@@ -1,0 +1,5 @@
+# Stop TS files being included in bundle
+/src
+
+# Stop test config
+/tsconfig.spec.json
