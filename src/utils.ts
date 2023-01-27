@@ -29,6 +29,20 @@ export const cloneWith = (subject: Date, changes: Required<DateTimeUpdate>): Dat
     );
 };
 
+/**
+ * @internal
+ */
+export const cloneSet = (subject: Date, changes: DateTimeUpdate): Date => {
+    return new Date(
+        changes.years   ?? subject.getFullYear(),
+        changes.months  ?? subject.getMonth(),
+        changes.days    ?? subject.getDate(),
+        changes.hours   ?? subject.getHours(),
+        changes.minutes ?? subject.getMinutes(),
+        changes.seconds ?? subject.getSeconds()
+    );
+};
+
 type MethodPair<T> = [keyof T, Function];
 type MethodMap<T> = Array<MethodPair<T>>;
 

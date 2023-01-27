@@ -1,4 +1,4 @@
-import { getMethods, cloneWith, normalise } from "./utils";
+import { getMethods, cloneWith, cloneSet, normalise } from "./utils";
 
 export type DateTimeUpdate = {
     days?: number
@@ -88,6 +88,48 @@ export class Epochee {
 
     addSeconds(seconds: number): Epochee {
         return this.add({
+            seconds: seconds
+        });
+    };
+
+    // ---- Setters ----
+
+    set(changes: DateTimeUpdate): Epochee {
+        return new Epochee(cloneSet(this.date, changes));
+    };
+
+    setYears(years: number): Epochee {
+        return this.set({
+            years: years
+        });
+    };
+
+    setMonths(months: number): Epochee {
+        return this.set({
+            months: months
+        });
+    };
+
+    setDays(days: number): Epochee {
+        return this.set({
+            days: days
+        });
+    };
+
+    setHours(hours: number): Epochee {
+        return this.set({
+            hours: hours
+        });
+    };
+
+    setMinutes(minutes: number): Epochee {
+        return this.set({
+            minutes: minutes
+        });
+    };
+
+    setSeconds(seconds: number): Epochee {
+        return this.set({
             seconds: seconds
         });
     };
