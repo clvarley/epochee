@@ -163,11 +163,11 @@ export class Epochee {
     // ---- Utilities ----
 
     clone(): Epochee {
-        return this.set({});
+        return new Epochee(this.date);
     };
 
     toDate(): Date {
-        return new Date(this.date);
+        return cloneSet(this.date, {});
     };
 
     toString(): string {
